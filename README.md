@@ -2,7 +2,7 @@
 Next JS-App consuming Fornite API
 
 <p> 
-the app linking is broken since nextjs build the app links with absolute path
+the app linking is broken since nextjs builds the app links with a absolute path
 and github is servig from differnt path.
 <p>
 
