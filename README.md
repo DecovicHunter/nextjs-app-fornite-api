@@ -6,7 +6,7 @@ the app linking is broken since nextjs builds the app links with an absolute pat
 and github is servig from differnt path.
 <p>
 
-- the API had slow response time so i stored the data in loacl JSON file.
+- the API had a slow response time so i stored the data in a loacl JSON file.
 
 <a href="https://decovichunter.github.io/nextjs-app-fornite-api/" > <h2> Link to the Page </h2> </a>
 
