@@ -10,10 +10,10 @@ import { Item } from "../types";
 import { fetchData } from "../dataFetch";
 
 interface IHomeProps {
-  data: Item[];
+  items: Item[];
 }
 
-const Home: React.FC<IHomeProps> = ({ data }) => {
+const Home: React.FC<IHomeProps> = ({ items }) => {
   // const [data, setData] = React.useState<Item[]>([]);
   // const [loading, setLoading] = React.useState(true);
   // const [error, setError] = React.useState();
@@ -38,13 +38,9 @@ const Home: React.FC<IHomeProps> = ({ data }) => {
         fornite upcoming items
       </h1>
       <div className={"md:flex md:flex-wrap md:justify-center mt-12"}>
-        {data?.map((item) => {
+        {items?.map((item) => {
           return (
-            <Link href={"/item/" + item.itemId} key={item.itemId}>
-              <a className="block  bg-gray-800 rounded-2xl m-2 h-full mx-4  md:w-1/4 hover:bg-gray-700 hover:z-10 transform hover:scale-105 transition-all ">
-                <ForniteItem item={item} />
-              </a>
-            </Link>
+               <ForniteItem item={item}  key={item.itemId} />
           );
         })}
       </div>
@@ -52,37 +48,19 @@ const Home: React.FC<IHomeProps> = ({ data }) => {
   );
 };
 
-// export const getServerSideProps: GetServerSideProps = async (context) => {
-//   let error = null;
-//   let data: Item[];
-
-//   try {
-//     let buffer = fs.readFileSync("Data.json");
-//     data = JSON.parse(await buffer.toString("utf-8"));
-//     // data = await fetchData("/upcoming/get");
-//   } catch (error) {
-//     console.log("error", error.message);
-//     // error = error;
-//   }
-
-//   return {
-//     props: { data },
-//   };
-// };
-
 export const getStaticProps: GetStaticProps = async (context) => {
-  let data: Item[],
+  let items: Item[],
     error = null;
   try {
     let buffer = fs.readFileSync("Data.json");
-    data = JSON.parse(await buffer.toString("utf-8"));
-    data = await fetchData("/upcoming/get");
+    items = JSON.parse(await buffer.toString("utf-8"));
+    // items = await fetchData("/upcoming/get");
   } catch (error) {
     // console.log(error);
   }
 
   return {
-    props: { data },
+    props: { items },
   };
 };
 
