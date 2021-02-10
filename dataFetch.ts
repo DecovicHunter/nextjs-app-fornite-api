@@ -5,10 +5,10 @@ export const fetchData = async (endPoint:string) => {
     headers: { Authorization: process.env.APIKEY },
   });
 
-  if (response.status !== 200) {
-    return Promise.reject(response.statusText);
+  if (!response.ok) {
+    throw new Error("Error"+response.status)
   }
 
-  const json = await response.json();
-  return Promise.resolve(json.data);
+  return  (await response.json()).data;
+  
 };
