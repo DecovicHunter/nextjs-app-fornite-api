@@ -48,7 +48,7 @@ const Home: React.FC<HomeProps> = ({ items }) => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  let items: Item[],
+  let items: Item[] = [],
     error = null;
   try {
     // items = await fetchData("/upcoming/get");

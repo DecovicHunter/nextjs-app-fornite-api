@@ -78,14 +78,14 @@ const sleep = (milliseconds: number) =>
   });
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const itemId = context.params.id;
+  const { id } = context.params;
   let item: Item;
 
   try {
     // item = await fetchData("/item/get?id=" + itemId);
     const buffer = fs.readFileSync("Data.json");
     const itemDatas = JSON.parse(await buffer.toString("utf-8"));
-    item = itemDatas.filter((item) => item.itemId == itemId)[0];
+    item = itemDatas.filter((item) => item.itemId == id)[0];
   } catch (error) {
     // console.log(error);
   }
