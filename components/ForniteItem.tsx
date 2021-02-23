@@ -11,7 +11,7 @@ const ForniteItem: React.FC<IForniteItemProps> = ({ item }) => {
   const rating = Array.from({ length: filledstar }, (_, index) => index);
 
   return (
-    <Link href={"./item/" + item.itemId}>
+    <Link href={"/item/" + item.itemId}>
       <a className="block  bg-gray-800 rounded-2xl m-2 h-full mx-4  md:w-1/4 hover:bg-gray-700 hover:z-10 transform transition-all ">
         <div className="w-full overflow-hidden" style={{ minHeight: 150 }}>
           <img
@@ -30,7 +30,11 @@ const ForniteItem: React.FC<IForniteItemProps> = ({ item }) => {
           <p className="text-gray-300">{item.item.ratings.avgStars}</p>
           <div className="flex">
             {rating?.map((_, index) => (
-              <img key={index} src="./icons/star.svg" width="20" />
+              <img
+                key={index}
+                src={process.env.prefix + "/icons/star.svg"}
+                width="20"
+              />
             ))}
           </div>
         </div>

@@ -54,7 +54,11 @@ const ItemDetails: React.FC<IItemProps> = ({ item }) => {
               :
             </p>
             {rating?.map((value) => (
-              <img key={value} src="./icons/star.svg" width="20" />
+              <img
+                key={value}
+                src={process.env.prefix + "/icons/star.svg"}
+                width="20"
+              />
             ))}
             {"  "}
           </div>
