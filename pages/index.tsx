@@ -33,9 +33,9 @@ const Home: React.FC<HomeProps> = ({ items }) => {
     setLoading(false);
   }, []);
 
-  if (loading) {
-    return <Loading />;
-  }
+  // if (loading) {
+  //   return <Loading />;
+  // }
 
   return (
     <div className="p-2">
