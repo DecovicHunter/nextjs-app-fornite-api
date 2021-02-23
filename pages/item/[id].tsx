@@ -102,7 +102,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
     // items = await fetchData("/upcoming/get");
     const buffer = fs.readFileSync("Data.json");
     items = JSON.parse(await buffer.toString("utf-8"));
-    console.log(items);
   } catch (error) {
     // console.log(error);
   }
