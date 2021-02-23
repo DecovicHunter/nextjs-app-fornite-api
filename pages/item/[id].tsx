@@ -44,7 +44,6 @@ const ItemDetails: React.FC<IItemProps> = ({ item }) => {
           <Detail title={"Cost"} value={item.item.cost} />
           <Detail title={"Rarity"} value={item.item.rarity} />
           <Detail title={"Series"} value={item.item.series} />
-          {/* <Detail title={""} value={item.item.type} /> */}
 
           <div className="flex text-center align-middle">
             <p className="inline font-bold text-lg">
