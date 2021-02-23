@@ -1,12 +1,8 @@
 # nextjs-app-fornite-api
 Next JS-App consuming Fornite API
 
-<p> 
-the app linking is broken since nextjs builds the app links with an absolute path
-and github is servig from differnt path.
-<p>
-
-- the API had a slow response time so i stored the data in a loacl JSON file.
+- <P>Nextjs was sending about 60 requests to build the files for the dynamic route, and the api wasn't responding 
+- to that much requests, leading a build fail, so beacuse of that I created a local file and stored the api data, and that were the data is coming from.
 
 <a href="https://ahmedabdikani.github.io/nextjs-app-fornite-api/" > <h2> Link to the Page </h2> </a>
 
