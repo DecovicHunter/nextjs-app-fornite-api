@@ -1,1 +1,0 @@
-_N_E=(window.webpackJsonp_N_E=window.webpackJsonp_N_E||[]).push([[7],{WdDX:function(n,_,d){(window.__NEXT_P=window.__NEXT_P||[]).push(["/item/[id]",function(){return d("dMU3")}])},dMU3:function(n,_,d){"use strict";d.r(_),_.default=null}},[["WdDX",0]]]);
