@@ -30,7 +30,7 @@ const ForniteItem: React.FC<IForniteItemProps> = ({ item }) => {
           <p className="text-gray-300">{item.item.ratings.avgStars}</p>
           <div className="flex">
             {rating?.map((_, index) => (
-              <img key={index} src="/icons/star.svg" width="20" />
+              <img key={index} src="./icons/star.svg" width="20" />
             ))}
           </div>
         </div>
