@@ -27,7 +27,11 @@ jobs:
       - run: touch tsconfig.json
       - run: npm install --save-dev @types/react @types/react-dom @types/node
       - run: npm run build
+        env:
+          NEXT_PUBLIC_BASE_PATH: /nextjs-app-fornite-api
       - run: npm run export
+        env:
+          NEXT_PUBLIC_BASE_PATH: /nextjs-app-fornite-api
       - run: touch ./out/.nojekyll
 
       - name: Deploy 🚀

@@ -1,6 +1,9 @@
-import Link from "next/link";
 import * as React from "react";
+import Link from "next/link";
+
 import { Item } from "../types";
+
+const prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 interface IForniteItemProps {
   item: Item;
@@ -30,11 +33,7 @@ const ForniteItem: React.FC<IForniteItemProps> = ({ item }) => {
           <p className="text-gray-300">{item.item.ratings.avgStars}</p>
           <div className="flex">
             {rating?.map((_, index) => (
-              <img
-                key={index}
-                src={process.env.prefix + "/icons/star.svg"}
-                width="20"
-              />
+              <img key={index} src={prefix + "/icons/star.svg"} width="20" />
             ))}
           </div>
         </div>

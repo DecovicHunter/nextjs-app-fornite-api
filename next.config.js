@@ -1,6 +1,4 @@
-const baseFolder = "/nextjs-app-fornite-api";
-
 module.exports = {
-  basePath: baseFolder,
-  assetPrefix: baseFolder,
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH,
+  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH,
 };

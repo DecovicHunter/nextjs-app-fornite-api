@@ -1,11 +1,13 @@
 import React from "react";
 import { useRouter } from "next/router";
 import fs from "fs";
+import { GetServerSideProps, GetStaticPaths, GetStaticProps } from "next";
 
 import { fetchData } from "../../dataFetch";
 import { Item } from "../../types";
-import { GetServerSideProps, GetStaticPaths, GetStaticProps } from "next";
 import Loading from "../../components/Loading";
+
+const prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 interface IItemProps {
   item: Item;
@@ -54,11 +56,7 @@ const ItemDetails: React.FC<IItemProps> = ({ item }) => {
               :
             </p>
             {rating?.map((value) => (
-              <img
-                key={value}
-                src={process.env.prefix + "/icons/star.svg"}
-                width="20"
-              />
+              <img key={value} src={prefix + "/icons/star.svg"} width="20" />
             ))}
             {"  "}
           </div>
