@@ -11,15 +11,24 @@ interface IItemProps {
   item: Item;
 }
 
+<<<<<<< HEAD
 const ItemDetails: React.FC<IItemProps> = ({ item }) => {
   if (!item) {
+=======
+const ItemDetails: React.FC<IItemProps> = ({ data }) => {
+  if (!data) {
+>>>>>>> 53d1e99f9f5d9c728e3a62f6d15f1eab0e873be8
     return <Loading />;
   }
   const router = useRouter();
   const filledstar = Math.round(item?.item?.ratings.avgStars);
+<<<<<<< HEAD
   const rating = Array.from({ length: filledstar }, (_, index) => {
     return index;
   });
+=======
+  const ratings = Array.from({ length: filledstar }, (_, index) => index);
+>>>>>>> 53d1e99f9f5d9c728e3a62f6d15f1eab0e873be8
 
   return (
     <div className="md:p-12 bg-gray-100 min-h-screen ">
@@ -34,7 +43,11 @@ const ItemDetails: React.FC<IItemProps> = ({ item }) => {
           <img
             src={item.item?.images?.icon}
             className="object-cover "
+<<<<<<< HEAD
             alt={item.item.description}
+=======
+            alt={itemitem.item.description}
+>>>>>>> 53d1e99f9f5d9c728e3a62f6d15f1eab0e873be8
           />
         </div>
         <div className="p-4 flex-col  h-full">
@@ -68,8 +81,8 @@ const ItemDetails: React.FC<IItemProps> = ({ item }) => {
           </div>
           <div className="flex text-center align-middle">
             <p className="inline font-bold text-lg">Stars: </p>{" "}
-            {rating?.map((_, index) => (
-              <img key={index} src="/icons/star.svg" width="20" />
+            {ratings?.map((vaue) => (
+              <img key={value} src="/icons/star.svg" width="20" />
             ))}
             {"  "}
             <p className="inline-block">
@@ -82,6 +95,7 @@ const ItemDetails: React.FC<IItemProps> = ({ item }) => {
   );
 };
 
+<<<<<<< HEAD
 const sleep = (milliseconds: number) =>
   new Promise((resolve) => {
     setTimeout(resolve, milliseconds);
@@ -98,6 +112,18 @@ export const getStaticProps: GetStaticProps = async (context) => {
     item = itemDatas.filter((item) => item.itemId == itemId)[0];
   } catch (error) {
     // console.log(error);
+=======
+export const getStaticProps: GetStaticProps = async (context) => {
+  const itemId = context.params.id;
+  let item: item;
+  try {
+    // data = await fetchData("/item/get?id=" + itemId);
+    let buffer = fs.readFileSync("Data.json");
+    const items = JSON.parse(await buffer.toString("utf-8"));
+    item = items.filter((item) => item.itemId == itemId)[0];
+  } catch (error) {
+    //console.log(error);
+>>>>>>> 53d1e99f9f5d9c728e3a62f6d15f1eab0e873be8
   }
 
   return {
@@ -106,6 +132,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
+<<<<<<< HEAD
   let items: Item[] = [];
 
   try {
@@ -115,6 +142,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
     console.log(items);
   } catch (error) {
     // console.log(error);
+=======
+  let items: item[];
+
+  try {
+    let buffer = fs.readFileSync("Data.json");
+    items = JSON.parse(await buffer.toString("utf-8"));
+  } catch (error) {
+   // console.log(error);
+>>>>>>> 53d1e99f9f5d9c728e3a62f6d15f1eab0e873be8
   }
 
   const paths = items.map((item) => ({
