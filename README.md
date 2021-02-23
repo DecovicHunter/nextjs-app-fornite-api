@@ -1,5 +1,5 @@
 # nextjs-app-fornite-api
-Next JS-App consuming Fornite API
+<h5>Next JS-App consuming Fornite API</h5>
 
 - <P>Nextjs was sending about 60 requests to build the files for the dynamic route, and the api wasn't responding to that much requests, leading to a build fail, so beacuse of that I created a local file and stored the api data, and that is were the data is coming from.</p>
 
